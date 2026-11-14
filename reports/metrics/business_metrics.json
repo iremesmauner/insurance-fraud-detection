@@ -1,0 +1,235 @@
+{
+  "top_k_lightgbm": [
+    {
+      "reviewed_share": 0.01,
+      "claims_reviewed": 31,
+      "frauds_caught": 11,
+      "precision": 0.3548387097,
+      "recall": 0.0594594595,
+      "lift": 5.9152571927
+    },
+    {
+      "reviewed_share": 0.02,
+      "claims_reviewed": 62,
+      "frauds_caught": 16,
+      "precision": 0.2580645161,
+      "recall": 0.0864864865,
+      "lift": 4.302005231
+    },
+    {
+      "reviewed_share": 0.05,
+      "claims_reviewed": 154,
+      "frauds_caught": 33,
+      "precision": 0.2142857143,
+      "recall": 0.1783783784,
+      "lift": 3.5722007722
+    },
+    {
+      "reviewed_share": 0.1,
+      "claims_reviewed": 308,
+      "frauds_caught": 58,
+      "precision": 0.1883116883,
+      "recall": 0.3135135135,
+      "lift": 3.1392067392
+    },
+    {
+      "reviewed_share": 0.2,
+      "claims_reviewed": 617,
+      "frauds_caught": 104,
+      "precision": 0.1685575365,
+      "recall": 0.5621621622,
+      "lift": 2.809899689
+    },
+    {
+      "reviewed_share": 0.3,
+      "claims_reviewed": 925,
+      "frauds_caught": 143,
+      "precision": 0.1545945946,
+      "recall": 0.772972973,
+      "lift": 2.5771336742
+    }
+  ],
+  "top_k_logreg": [
+    {
+      "reviewed_share": 0.01,
+      "claims_reviewed": 31,
+      "frauds_caught": 5,
+      "precision": 0.1612903226,
+      "recall": 0.027027027,
+      "lift": 2.6887532694
+    },
+    {
+      "reviewed_share": 0.02,
+      "claims_reviewed": 62,
+      "frauds_caught": 12,
+      "precision": 0.1935483871,
+      "recall": 0.0648648649,
+      "lift": 3.2265039233
+    },
+    {
+      "reviewed_share": 0.05,
+      "claims_reviewed": 154,
+      "frauds_caught": 26,
+      "precision": 0.1688311688,
+      "recall": 0.1405405405,
+      "lift": 2.8144612145
+    },
+    {
+      "reviewed_share": 0.1,
+      "claims_reviewed": 308,
+      "frauds_caught": 53,
+      "precision": 0.1720779221,
+      "recall": 0.2864864865,
+      "lift": 2.8685854686
+    },
+    {
+      "reviewed_share": 0.2,
+      "claims_reviewed": 617,
+      "frauds_caught": 106,
+      "precision": 0.1717990276,
+      "recall": 0.572972973,
+      "lift": 2.8639362215
+    },
+    {
+      "reviewed_share": 0.3,
+      "claims_reviewed": 925,
+      "frauds_caught": 130,
+      "precision": 0.1405405405,
+      "recall": 0.7027027027,
+      "lift": 2.3428487947
+    }
+  ],
+  "calibration": [
+    {
+      "mean_predicted": 0.0089187055,
+      "observed_fraud_rate": 0.0
+    },
+    {
+      "mean_predicted": 0.0120264183,
+      "observed_fraud_rate": 0.0025974026
+    },
+    {
+      "mean_predicted": 0.0130368197,
+      "observed_fraud_rate": 0.0051813472
+    },
+    {
+      "mean_predicted": 0.0149259276,
+      "observed_fraud_rate": 0.0025974026
+    },
+    {
+      "mean_predicted": 0.0558731041,
+      "observed_fraud_rate": 0.0493506494
+    },
+    {
+      "mean_predicted": 0.0946489278,
+      "observed_fraud_rate": 0.1088082902
+    },
+    {
+      "mean_predicted": 0.1158095012,
+      "observed_fraud_rate": 0.1168831169
+    },
+    {
+      "mean_predicted": 0.1672273106,
+      "observed_fraud_rate": 0.1943005181
+    }
+  ],
+  "cost_scenarios": {
+    "5": {
+      "theoretical_threshold": 0.2,
+      "chosen_threshold": 0.2067335842,
+      "flagged_share": 0.0123216602,
+      "precision": 0.3421052632,
+      "recall": 0.0702702703,
+      "cost: investigate nothing": 299.9351491569,
+      "cost: investigate everything": 1000.0,
+      "cost: two-variable rule": 467.2503242542,
+      "cost: logistic regression": 297.9896238651,
+      "cost: LightGBM": 291.1802853437
+    },
+    "10": {
+      "theoretical_threshold": 0.1,
+      "chosen_threshold": 0.0859296277,
+      "flagged_share": 0.3631647211,
+      "precision": 0.1410714286,
+      "recall": 0.8540540541,
+      "cost: investigate nothing": 599.8702983139,
+      "cost: investigate everything": 1000.0,
+      "cost: two-variable rule": 483.4630350195,
+      "cost: logistic regression": 467.5745784695,
+      "cost: LightGBM": 450.7133592737
+    },
+    "20": {
+      "theoretical_threshold": 0.05,
+      "chosen_threshold": 0.0465544239,
+      "flagged_share": 0.4607652399,
+      "precision": 0.1266713582,
+      "recall": 0.972972973,
+      "cost: investigate nothing": 1199.7405966278,
+      "cost: investigate everything": 1000.0,
+      "cost: two-variable rule": 515.8884565499,
+      "cost: logistic regression": 498.7029831388,
+      "cost: LightGBM": 493.1906614786
+    },
+    "50": {
+      "theoretical_threshold": 0.02,
+      "chosen_threshold": 0.0465544239,
+      "flagged_share": 0.4607652399,
+      "precision": 0.1266713582,
+      "recall": 0.972972973,
+      "cost: investigate nothing": 2999.3514915694,
+      "cost: investigate everything": 1000.0,
+      "cost: two-variable rule": 613.1647211414,
+      "cost: logistic regression": 547.3411154345,
+      "cost: LightGBM": 541.8287937743
+    }
+  },
+  "savings": {
+    "5": {
+      "best_alternative_without_model": "investigate nothing",
+      "saving_vs_nothing": 0.0291891892,
+      "saving_vs_best_alternative": 0.0291891892
+    },
+    "10": {
+      "best_alternative_without_model": "two-variable rule",
+      "saving_vs_nothing": 0.2486486486,
+      "saving_vs_best_alternative": 0.067739772
+    },
+    "20": {
+      "best_alternative_without_model": "two-variable rule",
+      "saving_vs_nothing": 0.5889189189,
+      "saving_vs_best_alternative": 0.0439974859
+    },
+    "50": {
+      "best_alternative_without_model": "two-variable rule",
+      "saving_vs_nothing": 0.8193513514,
+      "saving_vs_best_alternative": 0.1163405605
+    }
+  },
+  "tiers": {
+    "low_cut": 0.04655442388949686,
+    "high_cut": 0.20673358420385124,
+    "table": {
+      "1. Fast track (low risk)": {
+        "claims": 1663,
+        "frauds": 5,
+        "share_of_claims": 0.5392347601,
+        "fraud_rate": 0.0030066146,
+        "share_of_all_frauds": 0.027027027
+      },
+      "2. Standard review (medium risk)": {
+        "claims": 1383,
+        "frauds": 167,
+        "share_of_claims": 0.4484435798,
+        "fraud_rate": 0.1207519884,
+        "share_of_all_frauds": 0.9027027027
+      },
+      "3. Special investigation (high risk)": {
+        "claims": 38,
+        "frauds": 13,
+        "share_of_claims": 0.0123216602,
+        "fraud_rate": 0.3421052632,
+        "share_of_all_frauds": 0.0702702703
+      }
+    }
+  }
+}

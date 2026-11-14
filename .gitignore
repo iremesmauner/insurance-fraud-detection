@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Trained model artifacts are reproducible from notebooks/02_modeling.ipynb
+models/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/

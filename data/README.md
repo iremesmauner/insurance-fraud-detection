@@ -8,7 +8,7 @@
 | Target | `FraudFound_P` (1 = fraud found), 923 positives (5.99%) |
 | Period | 1994–1996 |
 | Original distribution | Kaggle: `shivamb/vehicle-claim-fraud-detection` |
-| Licence | CC0: Public Domain, as stated on the Kaggle dataset page |
+| Licence | CC0: Public Domain. Not read from the Kaggle page directly; taken from a peer-reviewed article that cites the dataset under this licence (https://www.mdpi.com/2571-5577/6/1/20) |
 | Downloaded from | `https://raw.githubusercontent.com/rezamosavi8740/Vehicle-Insurance-Claim-Fraud-Detection/main/data.csv` |
 | SHA-256 | `914d6c63a0d5e19b81f3ac0f2e2a45c8284b0a75c87233c3e5a7dcbeb806ac23` |
 

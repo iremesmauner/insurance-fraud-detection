@@ -56,14 +56,14 @@ DEFAULT_LGBM_PARAMS = dict(
 )
 
 
-def make_lgbm(strategy: str = "class_weight", **params) -> Pipeline:
+def make_lgbm(strategy: str = "class_weight", extra_nominal: tuple = (), **params) -> Pipeline:
     """LightGBM classifier on tree-friendly encoded features."""
     lgbm_params = {**DEFAULT_LGBM_PARAMS, **params}
     steps = []
     sampler = _sampler(strategy)
     if sampler is not None:
         steps.append(("resample", sampler))
-    steps.append(("encode", TreeEncoder()))
+    steps.append(("encode", TreeEncoder(extra_nominal=extra_nominal)))
     steps.append(("model", LGBMClassifier(
         **lgbm_params,
         class_weight="balanced" if strategy == "class_weight" else None,

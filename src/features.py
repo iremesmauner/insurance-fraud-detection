@@ -17,12 +17,21 @@ class TreeEncoder(BaseEstimator, TransformerMixin):
 
     Categories are learned on the training fold only; unseen levels become NaN,
     which LightGBM treats as missing.
+
+    `extra_nominal` lists ordinal columns that should be treated as unordered
+    instead (used for a sensitivity check in the explainability notebook).
     """
+
+    def __init__(self, extra_nominal: tuple = ()):
+        self.extra_nominal = extra_nominal
+
+    def _is_nominal(self, col: str) -> bool:
+        return col in config.NOMINAL_FEATURES or col in self.extra_nominal
 
     def fit(self, X: pd.DataFrame, y=None):
         self.nominal_categories_ = {
             col: sorted(X[col].dropna().unique().tolist(), key=str)
-            for col in config.NOMINAL_FEATURES if col in X.columns
+            for col in X.columns if self._is_nominal(col)
         }
         self.feature_names_in_ = list(X.columns)
         return self
@@ -32,7 +41,7 @@ class TreeEncoder(BaseEstimator, TransformerMixin):
         for col in X.columns:
             if col in config.BINARY_FEATURES:
                 out[col] = (X[col] == config.BINARY_FEATURES[col]).astype("int8")
-            elif col in config.ORDINAL_FEATURES:
+            elif col in config.ORDINAL_FEATURES and not self._is_nominal(col):
                 rank = {lvl: i for i, lvl in enumerate(config.ORDINAL_FEATURES[col])}
                 out[col] = X[col].map(rank).astype("float64")
             else:

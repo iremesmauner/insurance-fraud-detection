@@ -1,0 +1,114 @@
+{
+  "train_rows": 12335,
+  "test_rows": 3084,
+  "train_frauds": 738,
+  "test_frauds": 185,
+  "test_prevalence": 0.05998702983138781,
+  "rule_baseline": {
+    "precision": 0.12580877066858376,
+    "recall": 0.9459459459459459,
+    "f1": 0.22208121827411167,
+    "flagged_share": 0.45103761348897536,
+    "segment_score_pr_auc": 0.1397749333081981
+  },
+  "best_strategy": {
+    "LightGBM": "none",
+    "Logistic regression": "none"
+  },
+  "logreg_C": 10,
+  "lightgbm_params": {
+    "subsample": 1.0,
+    "reg_lambda": 0,
+    "num_leaves": 7,
+    "n_estimators": 300,
+    "min_child_samples": 80,
+    "learning_rate": 0.01,
+    "colsample_bytree": 0.6
+  },
+  "test_results": {
+    "Logistic regression": {
+      "cv_pr_auc": 0.153759334,
+      "cv_pr_auc_std": 0.0120137588,
+      "test_pr_auc": 0.1643740095,
+      "test_pr_auc_ci_low": 0.1356176692,
+      "test_pr_auc_ci_high": 0.2041974176,
+      "test_roc_auc": 0.8095820553,
+      "test_threshold": 0.1032912848,
+      "test_precision": 0.1553133515,
+      "test_recall": 0.6162162162,
+      "test_f1": 0.2480957563,
+      "test_flagged_share": 0.238002594,
+      "test_tp": 114,
+      "test_fp": 620,
+      "test_fn": 71,
+      "test_tn": 2279
+    },
+    "LightGBM": {
+      "cv_pr_auc": 0.2200897042,
+      "cv_pr_auc_std": 0.0486769935,
+      "test_pr_auc": 0.2034245941,
+      "test_pr_auc_ci_low": 0.1641767483,
+      "test_pr_auc_ci_high": 0.2539563989,
+      "test_roc_auc": 0.8224010143,
+      "test_threshold": 0.1239413261,
+      "test_precision": 0.181425486,
+      "test_recall": 0.4540540541,
+      "test_f1": 0.2592592593,
+      "test_flagged_share": 0.1501297017,
+      "test_tp": 84,
+      "test_fp": 379,
+      "test_fn": 101,
+      "test_tn": 2520
+    }
+  },
+  "lightgbm_minus_logreg_pr_auc": {
+    "diff": 0.03905058466003683,
+    "ci_low": 0.004830642723354133,
+    "ci_high": 0.07571292943173638,
+    "share_a_better": 0.99
+  },
+  "leakage_demo": {
+    "SMOTE-N before CV (leaky)": {
+      "pr_auc": 0.9925255395,
+      "f1@0.5": 0.9611144866,
+      "precision@0.5": 0.9674967235,
+      "recall@0.5": 0.9548159007,
+      "accuracy@0.5": 0.9613693197
+    },
+    "SMOTE-N inside CV (correct)": {
+      "pr_auc": 0.1757824284,
+      "f1@0.5": 0.1592920354,
+      "precision@0.5": 0.2295918367,
+      "recall@0.5": 0.1219512195,
+      "accuracy@0.5": 0.9229833806
+    }
+  },
+  "out_of_time": {
+    "Logistic regression": {
+      "train_rows": 11336,
+      "test_rows": 4083,
+      "test_frauds": 213,
+      "prevalence": 0.0521675239,
+      "pr_auc": 0.0960183096,
+      "ci_low": 0.0813851155,
+      "ci_high": 0.1177102358,
+      "lift_over_random": 1.8405763284,
+      "roc_auc": 0.7375040943
+    },
+    "LightGBM": {
+      "train_rows": 11336,
+      "test_rows": 4083,
+      "test_frauds": 213,
+      "prevalence": 0.0521675239,
+      "pr_auc": 0.1373553134,
+      "ci_low": 0.1068225511,
+      "ci_high": 0.1738798075,
+      "lift_over_random": 2.6329659367,
+      "roc_auc": 0.7509128847
+    }
+  },
+  "sensitive_feature_ablation_cv_pr_auc": {
+    "all features": 0.22008970416669688,
+    "without Sex, MaritalStatus, AgeOfPolicyHolder": 0.20583711814468764
+  }
+}

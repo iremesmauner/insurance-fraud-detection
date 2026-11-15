@@ -12,3 +12,6 @@ models/
 .DS_Store
 .vscode/
 .idea/
+
+# Private notes: kept locally, never published
+RAPOR_TR.md
